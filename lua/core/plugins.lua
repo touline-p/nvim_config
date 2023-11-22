@@ -17,6 +17,10 @@ return require('packer').startup(function(use)
 
 	--plugin here
 
+		-- fugitive
+
+	use('tpope/vim-fugitive')
+
 		-- Telescope
 
 	use {
@@ -25,11 +29,11 @@ return require('packer').startup(function(use)
 	}
 
 		-- Color
-	
+
 	use({ 'nanotech/jellybeans.vim' })
 
 		-- Treesitter
-	
+
 	use('nvim-treesitter/nvim-treesitter', { run = 'TSUpdate'})
 
 		-- Lsp
@@ -49,10 +53,16 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},     -- Required
 		}
 	}
-	
+
 		-- Bootstrap
 
 	if packer_bootstrap then
 		require('packer').sync()
 	end
+
+		-- toggleterm
+	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+		require("toggleterm").setup()
+	end}
+
 end)
