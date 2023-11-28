@@ -1,4 +1,5 @@
-vim.keymap.set("n", "<leader>g", ":Git<CR>:resize 15<CR>");
+vim.keymap.set("n", "<leader>gg", ":Git<CR>:resize 15<CR>:set winfixheight<CR>");
+vim.keymap.set("n", "<leader>gp", ":Git pull<CR>:Git push<CR>")
 
 vim.keymap.set("n", "<leader>p", function()
     vim.cmd.Git('push')

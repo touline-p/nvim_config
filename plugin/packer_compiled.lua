@@ -139,6 +139,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/nfs/homes/bpoumeau/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/nfs/homes/bpoumeau/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   }
 }
 
