@@ -1,11 +1,17 @@
 local ensure_packer = function()
+	print("ensure packer func called")
 	local fn = vim.fn
-	local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+	local install_path_dir = fn.stdpath('data')..'/site/pack/packer/start/'
+	os.execute("mkdir -p "..install_path_dir)
+	local install_path = install_path_dir..'packer.nvim'
+	
 	if fn.empty(fn.glob(install_path)) > 0 then
 		fn.system({'git', 'clone', '--depth','1', 'https://github.com/wbthomason/packer.nvim', install_path})
 		vim.cmd [[packadd packer.nvim]]
+		print("dir is installing")
 		return true
 	end
+	print("dir is empty")
 	return false
 end
 
